@@ -1,0 +1,32 @@
+name: Run Daily Injury Scripts
+
+on:
+  schedule:
+    - cron: '0 0 * * *'  # Runs daily at midnight UTC
+
+jobs:
+  run_scripts:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt || echo "No dependencies file"
+
+      - name: Run Python Scripts
+        run: |
+          python AFL_Injuries.py
+          python Excel_Sheet.py
+          python Get_player_id.py
+          python MLB_Injuries.py
+          python NBA_Injuries.py
+          python NFL_Injuries.py
+          python NHL_Injuries.py
+          python Excel_sheet.py
