@@ -21,7 +21,6 @@ jobs:
     - name: Run scripts
       run: |
         python AFL_Injuries.py
-        python Excel_Sheet.py
         python Get_player_id.py
         python MLB_Injuries.py
         python NBA_Injuries.py
