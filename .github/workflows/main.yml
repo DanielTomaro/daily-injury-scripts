@@ -3,6 +3,8 @@ name: Run Daily Injury Scripts
 on:
   schedule:
     - cron: '0 0 * * *'  # Runs daily at midnight UTC
+  workflow_dispatch:  # Allows manual triggering
+
 
 jobs:
   run_scripts:
