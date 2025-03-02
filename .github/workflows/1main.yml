@@ -25,6 +25,6 @@ jobs:
         python MLB_Injuries.py
         python NBA_Injuries.py
         python NFL_Injuries.py
-        python NRL_Injuries.py
+        python NRL_injuries.py
         python NHL_Injuries.py
         python Excel_sheet.py
