@@ -3,8 +3,7 @@ name: Run Daily Injury Scripts
 on:
   schedule:
     - cron: '0 0 * * *'  # Runs daily at midnight UTC
-  workflow_dispatch:  # Allows manual triggering
-
+  workflow_dispatch:  # Allows manual execution
 
 jobs:
   run_scripts:
@@ -16,11 +15,11 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.9'
+          python-version: '3.9'  # Change to match your script’s requirements
 
       - name: Install dependencies
         run: |
-          pip install -r requirements.txt || echo "No dependencies file"
+          pip install -r requirements.txt || echo "No dependencies file found"
 
       - name: Run Python Scripts
         run: |
